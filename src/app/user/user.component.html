@@ -1,0 +1,37 @@
+<!-- Using Input Decorator we are getting the imagePath and name from app.component.html -->
+<div>
+    <button (click)="onSelectUser()">
+        <img [src]="'assets/users/'+avatar"/>
+        <span>{{ name }}</span>
+    </button>
+</div>
+
+<!-- Using signal {{}} -->
+<!-- 
+    <div>
+    <button (click)="onSelectUser">
+        <img [src]="imagePath()"/>
+        <span>{{selectedUser().name}}</span>
+    </button>
+    </div> 
+-->
+
+<!-- Using simple {{}} -->
+<!-- 
+    <div>
+    <button>
+        <img src={{selectedUser.avatar}}/>
+        <span>{{name}}</span>
+    </button>
+    </div> 
+-->
+
+<!-- Using [] -->
+<!-- 
+    <div>
+    <button>
+        <img [src]="{{selectedUser.avatar}}"/>
+        <span>{{name}}</span>
+    </button>
+    </div> 
+-->
