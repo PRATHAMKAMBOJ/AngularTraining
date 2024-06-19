@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { newTask } from "./new-task/new-task.model";
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn: 'root'})// what is provided in ?
 export class TasksService { 
     private tasks =[
         {

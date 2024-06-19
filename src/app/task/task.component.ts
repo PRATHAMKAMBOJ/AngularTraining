@@ -17,7 +17,7 @@ export class TaskComponent {
     @Input({required: true}) userId!:string;
     @Input({required: true}) name!:string;
     isAddingTask = false;
-
+    
     constructor(private tasksService: TasksService){}
     tasks =[
       {
@@ -48,7 +48,7 @@ export class TaskComponent {
     }
 
     onCompleteTask(id:string){
-      this.tasks = this.tasks.filter((task)=>task.id !== id);
+      this.tasksService.removeTask(id);
     }
 
     onStartAddTask(){
@@ -60,13 +60,7 @@ export class TaskComponent {
     }
 
     onAddTask(taskData:newTask){
-      this.tasks.push({
-        id: new Date().getTime().toString(),
-        userId: this.userId ,
-        title: taskData.title,
-        summary: taskData.summary,
-        dueDate:taskData.date
-      });
+      this.tasksService.addTask(taskData,this.userId);
       this.isAddingTask = false;
     }
 }
