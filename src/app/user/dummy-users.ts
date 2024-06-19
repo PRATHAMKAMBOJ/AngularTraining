@@ -31,8 +31,3 @@ export const DUMMY_USERS = [
     },
   ];
 
-  export interface User{
-    id:string;
-    name:string;
-    avatar:string;
-  }

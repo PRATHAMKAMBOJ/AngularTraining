@@ -9,7 +9,7 @@
      </li>
     } -->
     <li *ngFor="let user of users">
-      <app-user [user]="user" (select)="onSelectUser($event)"/>  
+      <app-user [user]="user" (select)="onSelectUser($event)" [selected]="user.id === selectedUserId"/>  
    </li>
   </ul>
   <!-- @if(selectedUser){
@@ -18,7 +18,7 @@
     <p id="fallback">Select a user to see their tasks!</p>
   } -->
 
-  <app-task *ngIf="selectedUser; else fallback" [name]="selectedUser!.name"></app-task>
+  <app-task *ngIf="selectedUser; else fallback" [name]="selectedUser!.name" [userId]="selectedUser.id"></app-task>
   <ng-template #fallback>
     <p id="fallback">Select a user to see their tasks!</p>
   </ng-template>

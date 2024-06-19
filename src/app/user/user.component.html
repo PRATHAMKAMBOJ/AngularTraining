@@ -1,10 +1,10 @@
 <!-- Using Input Decorator we are getting the imagePath and name from app.component.html -->
-<div>
-    <button (click)="onSelectUser()">
+<app-card>
+    <button [class.active]="selected" (click)="onSelectUser()">
         <img [src]="'assets/users/'+ user.avatar"/>
         <span>{{ user.name }}</span>
     </button>
-</div>
+</app-card>
 
 <!-- Using signal {{}} -->
 <!-- 

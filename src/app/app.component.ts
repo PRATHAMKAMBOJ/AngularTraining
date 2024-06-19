@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
-import { DUMMY_USERS, User } from './user/dummy-users';
+import { DUMMY_USERS } from './user/dummy-users';
 import { TaskComponent } from './task/task.component';
 import { NgFor , NgIf } from '@angular/common';
+import { User } from './user/user.model';
 
 @Component({
   selector: 'app-root',

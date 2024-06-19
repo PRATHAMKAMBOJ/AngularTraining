@@ -1,6 +1,7 @@
 import { Component , EventEmitter, Input, Output, computed, input, signal } from '@angular/core';
 import { DUMMY_USERS } from './dummy-users';
-import { NgFor } from '@angular/common';
+import { User } from './user.model';
+import { CardComponent } from "../shared/card/card.component";
 
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 // type User = {
@@ -8,18 +9,12 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 //   avatar: string,
 //   name: string
 // }
-
-interface User{
-  id: string,
-  avatar: string,
-  name: string
-}
 @Component({
-  selector: 'app-user',
-  standalone: true,
-  imports: [],
-  templateUrl: './user.component.html',
-  styleUrl: './user.component.css'
+    selector: 'app-user',
+    standalone: true,
+    templateUrl: './user.component.html',
+    styleUrl: './user.component.css',
+    imports: [CardComponent]
 })
 export class UserComponent {
   // @Input({required: true}) id!: string;
@@ -31,6 +26,7 @@ export class UserComponent {
   //       avatar: string,
   //       name: string 
   // };
+  @Input({required:true}) selected!: boolean;
   @Input({required:true}) user!: User;
 
   // avatar =input.required<string>();                         ||   Another way for Input decorator 
@@ -46,6 +42,7 @@ export class UserComponent {
   
 
   onSelectUser(){
+  
     //this.selectedUser.set(DUMMY_USERS[randomIndex]);     ||      In this way we can assign value to a signal
     //console.log(this.avatar +' | '+ this.name);
     console.log('this.id',this.user.id)
