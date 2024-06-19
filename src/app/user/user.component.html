@@ -1,8 +1,8 @@
 <!-- Using Input Decorator we are getting the imagePath and name from app.component.html -->
 <div>
     <button (click)="onSelectUser()">
-        <img [src]="'assets/users/'+avatar"/>
-        <span>{{ name }}</span>
+        <img [src]="'assets/users/'+ user.avatar"/>
+        <span>{{ user.name }}</span>
     </button>
 </div>
 
